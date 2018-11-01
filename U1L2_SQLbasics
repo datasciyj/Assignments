@@ -1,0 +1,25 @@
+#drill 1
+SELECT
+	trip_id
+	duration
+FROM
+    trips
+WHERE
+	duration > 500
+ORDER BY duration DESC 
+
+#drill 2
+SELECT
+	*
+FROM
+    stations
+WHERE
+	station_id=84
+  
+#drill 3
+SELECT
+	mintemperaturef
+FROM
+    weather
+where
+	zip = 94301
