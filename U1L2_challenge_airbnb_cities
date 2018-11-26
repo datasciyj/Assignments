@@ -1,0 +1,25 @@
+-- What's the most expensive listing? What else can you tell me about the listing?
+-- I also can analyze which list get the highest rating, which property type is the most popular and so on.
+SELECT 
+	MAX(price)
+FROM 
+	airbnb
+	
+-- What neighborhoods seem to be the most popular?
+SELECT 
+	neighbourhood,
+	COUNT(*) number
+FROM
+	airbnb
+GROUP BY 1
+ORDER BY number DESC
+LIMIT 1;
+
+-- What time of year is the cheapest time to go to your city? What about the busiest?
+SELECT
+	to_char(calendar_date,'MM') as month,
+	AVG(price)
+FROM
+	sd_calendar
+GROUP BY 1
+ORDER BY 2;
